@@ -1,0 +1,58 @@
+<div class="container">
+<!--Card Design--->
+<div class="card">
+  <img src="../assets/photo-1513904178077-6c5730ddd446.avif"/>
+  <div class="content">
+    <div class="title">Beach day</div>
+    <div class="slogan">Rufus The DOG</div>
+    <div class="date">Modified 02/28/2019 by bfrost</div>
+  </div>
+</div>
+
+</div>
+
+<!--Form Design---> 
+<div class="formDesgn">
+  <form class="mainForm">
+     <div class="formGroup">
+       <label>Name</label>
+       <input type="text" placeholder="Enter Name" />
+     </div>
+     <div class="formGroup">
+       <label>Email</label>
+       <input type="text" placeholder="Enter Email" />
+     </div>
+     <div class="formGroup">
+       <label>Phone Number</label>
+       <input type="number" placeholder="Enter Phone Number" />
+     </div>
+     <div class="formGroup">
+       <label>Password</label>
+       <input type="password" placeholder="Enter Password" />
+     </div>
+     <div class="formGroup mar">
+       <label>Confirm Password</label>
+       <input type="password" placeholder="Confirm Password" />
+     </div>
+     <button class="primary">SAVE</button>
+  </form>
+ </div>
+
+
+<!------Table Design----->
+<table class="csttable">
+  <thead>
+    <tr>
+      <th (click)="sort('name')">Product Name <span class="arrow-down" *ngIf="!asce"></span> <span class="arrow-up" *ngIf="asce"></span></th>
+      <th (click)="sort('price')">Price <span class="arrow-down" *ngIf="!asce"></span> <span class="arrow-up" *ngIf="asce"></span></th>
+      <th (click)="sort('category')">Category <span class="arrow-down" *ngIf="!asce"></span> <span class="arrow-up" *ngIf="asce"></span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cookie of allCookies | orderBy: key: reverse">
+      <td>{{cookie.name}}</td>
+      <td>{{cookie.price}}</td>
+      <td>{{cookie.category}}</td>
+    </tr>
+  </tbody>
+</table>
